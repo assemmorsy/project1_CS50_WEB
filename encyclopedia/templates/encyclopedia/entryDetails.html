@@ -1,0 +1,14 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{entryTitle}}
+{% endblock %}
+
+{% block body %}
+{% if entry %}
+    {{entry|safe}}
+{% else %}
+    <h1>The requested page was not found</h1>
+{% endif %}
+    <a class="btn btn-primary" href="{% url 'entry_edit' entryTitle  %}"> Edit </a>  
+{% endblock %}

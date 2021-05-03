@@ -1,0 +1,22 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+    {% if error != "" %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error :</strong> {{error}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endif %}
+    <h3>Create New Page</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="btn btn-primary" type="submit" value="add">
+    </form>
+{% endblock %}
